@@ -17,7 +17,7 @@
 # ### Cyclotron radiation
 # The angular cyclotron frequency, $\Omega_c$, of ana lectron with kinetic energy $T$ and mass $m_{e}$ in a magnetic field $B$ is
 # $$ \Omega_{C} = \frac{eB}{\gamma m_e}=\frac{eB}{m_e + T/c^2} $$
-# The cycltron frequency $f_c$ is related to the angular cyclotron frequency in the usual fashion.
+# The cyclotron frequency $f_c$ is related to the angular cyclotron frequency in the usual fashion.
 # $$ f_c = \frac{\Omega_c}{2 \pi} $$
 #
 
@@ -29,7 +29,7 @@ import matplotlib
 matplotlib.rcParams['figure.dpi']=300 # highres display
 
 # Define the kinetic energy at the tritium end point
-T_end=17.6*1000*scipy.constants.e  #17.6keV in J
+T_end=18.6*1000*scipy.constants.e  #18.6keV in J
 B=1 # 1 T
 
 print(T_end)
@@ -62,12 +62,12 @@ ax.set_title("Electron K.E vs Cyclotron Frequency")
 # #### Zooming right into the end point
 
 fig,ax = plt.subplots()
-tArray = np.linspace(0.9999*T,T,100)
+tArray = np.linspace(0.9999*T_end,T_end,100)
 omegaArray= getCyclotronFreq(B,tArray)
-ax.plot((tArray/scipy.constants.e)-17.6e3,(omegaArray-27.0e9)/1e6)  #Conversion to eV and GHz
-ax.set_xlabel("Electron Kinetic Energy -- Difference to 17.6keV (eV)")
+ax.plot((tArray/scipy.constants.e)-18.6e3,(omegaArray-27.0e9)/1e6)  #Conversion to eV and GHz
+ax.set_xlabel("Electron Kinetic Energy -- Difference to 18.6keV (eV)")
 ax.set_ylabel("Cyclotron Frequency [-27GHz] (MhZ)")
-ax.set_title("Energy Difference to 17.6keV")
+ax.set_title("Energy Difference to 18.6keV")
 #_ = plt.xticks(rotation=60)
 
 
